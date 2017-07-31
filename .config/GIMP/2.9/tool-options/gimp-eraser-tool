@@ -1,0 +1,12 @@
+# GIMP gimp-eraser-tool options
+
+(brush "2. Hardness 100")
+(dynamics "No Dynamics")
+(palette "Color History")
+(brush-size 27.000000)
+(brush-zoom yes)
+(brush-spacing 0.200000)
+(smoothing-quality 40)
+(brush-link-size no)
+
+# end of gimp-eraser-tool options

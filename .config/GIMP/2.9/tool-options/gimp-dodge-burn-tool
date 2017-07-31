@@ -1,0 +1,9 @@
+# GIMP gimp-dodge-burn-tool options
+
+(brush "Clipboard Image")
+(dynamics "Smudge Soft")
+(palette "Color History")
+(brush-size 17.000000)
+(brush-spacing 0.200000)
+
+# end of gimp-dodge-burn-tool options

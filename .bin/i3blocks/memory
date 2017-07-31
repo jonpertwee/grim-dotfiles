@@ -1,0 +1,22 @@
+#!/bin/sh
+# get ram usage in percent
+set -euf -o pipefail
+ramTotal=`free -k | sed -n -e '2p' | sed 's/Mem:\s*//' | awk '{print $1}'`
+ramFull=`free -k | sed -n -e '2p' | sed 's/Mem:\s*//' | awk '{print $2}'`
+ramPerc=`echo "$(echo "scale=1; $ramFull * 100 / $ramTotal" | bc)"`
+
+echo $ramPerc%
+echo
+
+# color
+if [ $(echo "$ramPerc >= 80" | bc) -eq 1 ]
+then
+    echo \#DC322f
+elif [ $(echo "$ramPerc < 80" | bc) -eq 1 ] && [ $(echo "$ramPerc >=70" | bc) -eq 1 ]
+then
+    echo \#F07D2B
+elif [ $(echo "$ramPerc < 70" | bc) -eq 1 ]
+then
+    echo \#55FF33
+fi
+

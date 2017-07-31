@@ -1,0 +1,289 @@
+# i3 Config File - Tristen Lundquist
+## Variables {{{
+
+# Set Modifier Variables
+set $mod Mod1
+set $con Control
+
+# Set Workspace Names
+set $ws1 1:•
+set $ws2 2:•
+set $ws3 3:•
+set $ws4 4:•
+set $ws5 5:•
+set $ws6 6:•
+set $ws7 7:•
+set $ws8 8:•
+set $ws9 9:•
+set $ws10 10:•
+set $ws11 11:•
+set $ws12 12:•
+
+# Set Environment Colour Variables
+set $bg #363636
+set $fg #CCCCCC
+set $ur #DC322F
+set $in #888888
+set $hl #5294E1
+set $un #000000
+set $tr #000000A9
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# }}}
+## UI Appearance {{{
+
+# Set font
+font xft:Awesome, Monaco for Powerline 10
+
+# class                     border  backgr  text    indicator
+client.focused              $bg     $bg     $fg     $bg
+client.focused_inactive     $bg     $bg     $in     $bg
+client.unfocused            $bg     $bg     $in     $bg
+client.urgent               $ur     $bg     $ur     $bg
+
+# Set gap width
+gaps inner 7
+gaps outer 0
+smart_gaps on
+smart_borders on
+
+# Set the border width to 0px
+for_window [class="^.*"] border pixel 1
+
+# }}}
+## Windows/Workspaces {{{
+# Assign Windows to Workspaces
+assign [class="discord"] $ws4
+assign [window_role="^browser"] $ws2
+assign [class="Steam"] $ws5
+assign [class="Libreoffice"] $ws4
+assign [class="Gimp-2.9"] $ws3
+assign [class="Gimp"] $ws3
+assign [class="Krita"] $ws3
+assign [class="krita"] $ws3
+assign [class="Inkscape"] $ws3
+assign [class="mpv"] $ws5
+assign [class="smplayer"] $ws5
+assign [class="google-chrome"] $ws2
+assign [class="google-chrome-beta"] $ws2
+assign [class="google-chrome-dev"] $ws2
+assign [class="firefox"] $ws2
+assign [class="Vivaldi-snapshot"] $ws2
+assign [class="Vivaldi"] $ws2
+
+## Set Workspace Display Output
+#workspace $ws1
+#workspace $ws2
+#workspace $ws3
+#workspace $ws4
+#workspace $ws5
+#workspace $ws6
+#workspace $ws7
+#workspace $ws8
+#workspace $ws9
+#workspace $ws10
+#workspace $ws11
+#workspace $ws12
+
+# Enable auto back-and-forth
+workspace_auto_back_and_forth yes
+mouse_warping none
+
+# }}}
+## Keybindings {{{
+
+# start a terminal
+bindsym $mod+Return exec urxvtc
+
+# kill focused window
+bindsym $mod+q kill
+
+# start dmenu
+# lists after, fuzzy matching insensitively, urxvt terminal apps
+bindsym $mod+Tab exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -b -i -q -h 24 -o 0.8 -nb \#000 -nf \#FFF -sb \#4084D6 -sf \#FFF -fn Fira\ Mono-10:normal" --term="urxvtc"
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in horizontal orientation
+bindsym $mod+v split h
+
+# split in vertical orientation
+bindsym $mod+b split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Home floating toggle
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+p move scratchpad
+
+# show the next scratchpad window or hide the focused scratchpad window.
+bindsym $mod+p scratchpad show
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+minus workspace $ws11
+bindsym $mod+equal workspace $ws12
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+minus move container to workspace $ws11
+bindsym $mod+Shift+equal move container to workspace $ws12
+
+# restart i3
+bindsym $mod+Shift+r restart
+
+# lock the screen
+bindsym $mod+Escape exec ~/.bin/lock_screen.sh
+
+# Toggle i3bar display
+bindsym $mod+i bar mode toggle
+
+# Toggle window borders
+bindsym $mod+t border toggle
+
+# Toggle secondary monitor
+bindsym $mod+F7 exec xrandr --output eDP1 --primary && xrandr --output VGA1 --left-of eDP1 --auto && sh ~/.fehbg
+bindsym $mod+Shift+F7 exec xrandr --output eDP1 --primary && xrandr --output VGA1 --off && sh ~/.fehbg
+
+# Media Keys
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ Playback && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%- Playback && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute exec amixer sset Master toggle Playback && pkill -RTMIN+1 i3blocks
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 && pkill -RTMIN+2 i3blocks
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 && pkill -RTMIN+2 i3blocks
+bindsym XF86AudioPlay exec mpc -h 0.0.0.0 toggle && pkill -RTMIN+3 i3blocks
+bindsym XF86AudioPrev exec mpc -h 0.0.0.0 prev && pkill -RTMIN+3 i3blocks
+bindsym XF86AudioNext exec mpc -h 0.0.0.0 next && pkill -RTMIN+3 i3blocks
+bindsym XF86AudioStop exec mpc -h 0.0.0.0 stop && pkill -RTMIN+3 i3blocks
+bindsym Print exec scrot $HOME/pictures/records/screenshots/screen_%y-%m-%d-%R.png
+
+# }}}
+## Alternate Modes {{{
+
+# Rearrange window placement and sizes
+mode "resize" {
+    # modify window sizes
+    bindsym h            resize shrink width 3 px or 3 ppt
+    bindsym j           resize grow height 3 px or 3 ppt
+    bindsym k           resize shrink height 3 px or 3 ppt
+    bindsym l           resize grow width 3 px or 3 ppt
+    bindsym Left        resize shrink width 3 px or 3 ppt
+    bindsym Down        resize grow height 3 px or 3 ppt
+    bindsym Up          resize shrink height 3 px or 3 ppt
+    bindsym Right       resize grow width 3 px or 3 ppt
+    # change focus
+    bindsym $mod+h focus left
+    bindsym $mod+j focus down
+    bindsym $mod+k focus up
+    bindsym $mod+l focus right
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+    # move focused window
+    bindsym $mod+Shift+h move left
+    bindsym $mod+Shift+j move down
+    bindsym $mod+Shift+k move up
+    bindsym $mod+Shift+l move right
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+    # return to normal
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Power management mode
+mode "(E)xit, (H)ibernate, (R)eboot, (P)oweroff" {
+    bindsym e exec i3-msg exit
+    bindsym h exec i3-msg mode "default" && systemctl hibernate
+    bindsym r exec systemctl reboot
+    bindsym p exec systemctl poweroff
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+BackSpace mode "(E)xit, (H)ibernate, (R)eboot, (P)oweroff"
+
+# }}}
+## i3bar Settings {{{
+
+bar {
+    i3bar_command i3bar -t
+    status_command i3blocks
+    position top
+    height 26
+    workspace_buttons yes
+    strip_workspace_numbers yes
+    modifier Mod4
+#    separator_symbol "•"
+#    separator_symbol " "
+    separator_symbol "|"
+    colors {
+        background          $tr
+        statusline          $fg
+        separator           $fg
+       #<colorclass>        <border>  <background>  <text>
+        focused_workspace   $tr       $tr           $hl
+        active_workspace    $tr       $tr           $fg
+        inactive_workspace  $tr       $tr           $fg
+        urgent_workspace    $tr       $tr           $ur
+    }
+}
+# }}}
+## Autostarts {{{
+
+# Autostart Daemons and Configurations
+#exec --no-startup-id sleep 2 && xrandr --output eDP1 --preferred && xrandr --output VGA1 --left-of eDP1 --auto
+exec_always --no-startup-id killall compton; compton -b --config ~/.config/compton.conf
+exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -- '35%'
+exec --no-startup-id dunst
+exec --no-startup-id eval $(ssh-agent)
+exec_always --no-startup-id xrdb -load ~/.Xresources
+exec_always --no-startup-id sh ~/.fehbg
+
+# Autostart applications
+exec --no-startup-id vivaldi-snapshot
+exec --no-startup-id discord
+exec --no-startup-id sleep 2; ~/.bin/wsp1.sh
+
+# }}}
+# vim:foldmethod=marker:foldlevel=0

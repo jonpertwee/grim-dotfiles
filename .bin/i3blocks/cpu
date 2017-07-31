@@ -1,0 +1,21 @@
+#!/bin/bash
+# grabs average cpu temperature & load & outputs it w/ color change at high temperatures
+set -euf -o pipefail
+cpuTemp=`sensors | grep "Package id 0" | sed 's/Package\ id\ 0:\s*+//' | awk '{print $1}'`
+cpuIdle=`mpstat 1 1 | tail -n 1 | awk '{print $12}'`
+cpuTest=`echo $cpuTemp | cut -b 1-2`
+cpuUse=`echo "$(echo "scale=1; 100 - $cpuIdle" | bc )"`
+echo $cpuUse% @ $cpuTemp
+echo
+
+# color
+if [ $(echo "$cpuTest >= 90" | bc) -eq 1 ]
+then
+    echo \#DC322f
+elif [ $(echo "$cpuTest < 90" | bc) -eq 1 ] && [ $(echo "$cpuTest >=75" | bc) -eq 1 ]
+then
+    echo \#F07D2B
+elif [ $(echo "$cpuTest < 70" | bc) -eq 1 ]
+then
+    echo \#55FF33
+fi

@@ -1,0 +1,23 @@
+#!/bin/bash
+# Script for getting the title of the currently playing song, changing color if it's paused
+set -euf -o pipefail
+music() {
+if [ -z "$(mpc -h 0.0.0.0 current)" ];
+then
+    echo "N/A"
+elif [ "$(mpc -h 0.0.0.0 status | grep -Po paused)" = "paused" ];
+then
+    echo $(mpc -h 0.0.0.0 current | iconv -t UTF8 -c | cut -b 1-50)
+    echo
+    echo \#6C75B8
+else
+    echo $(mpc -h 0.0.0.0 current | iconv -t UTF8 -c)
+fi
+}
+
+case $BLOCK_BUTTON in
+    3) mpc -h 0.0.0.0 toggle && music && pkill -RTMIN+3 i3blocks ;;
+    4) mpc -h 0.0.0.0 prev && music && pkill -RTMIN+3 i3blocks ;;
+    5) mpc -h 0.0.0.0 next && music && pkill -RTMIN+3 i3blocks ;;
+    *) music && pkill -RTMIN+3 i3blocks ;;
+esac

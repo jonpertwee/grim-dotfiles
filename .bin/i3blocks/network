@@ -1,0 +1,39 @@
+#!/bin/bash
+# find essid, signal quality, bitrate
+
+# grab interface name
+interface=$(iw dev | grep Interface | sed -e 's/^[\t]*Interface //')
+
+# make sure interface is up
+[[ ! -d /sys/class/net/${interface}/wireless ]] && exit
+
+if [[ "$(cat /sys/class/net/$interface/operstate)" = 'down' ]]; then
+    echo N/A
+    echo N/A
+    echo \#DC322F
+    exit
+fi
+
+# find quality
+quality=$(grep $interface /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
+
+# find essid
+essid=$(iwgetid | sed 's/^.*ESSID\://' | tr -d \")
+
+# find bitrate
+bitrate=$(iw dev $interface link | grep bitrate | sed -e 's/[^0-9.]*//;s/\ M.*$//')
+
+# print for i3blocks
+echo $essid@$bitrate Mb/s  # full text
+echo $quality% # short text
+
+# color
+if [[ $quality -ge 70 ]]; then
+    echo "#55FF33"
+elif [[ $quality -lt 70 ]] && [[ $quality -ge 50 ]]; then
+    echo "#F07D2B"
+elif [[ $quality -lt 50 ]]; then
+    echo "#DC322F"
+fi
+
+

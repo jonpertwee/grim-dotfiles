@@ -1,0 +1,8 @@
+! load display settings
+#include "/home/mikhail/.Xresources.d/xdisplay"
+! load urxvt settings
+#include "/home/mikhail/.Xresources.d/urxvt"
+! Load the theme to use
+#include "/home/mikhail/.Xresources.d/themes/twigger"
+! load the theme defs
+#include "/home/mikhail/.Xresources.d/theme"

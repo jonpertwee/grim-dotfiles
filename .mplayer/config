@@ -1,0 +1,8 @@
+# Write your default config options here!
+lirc=no
+#zoom=yes
+#really-quiet=yes
+vo=vdpau,xv,fbdev2,null,
+ao=alsa,pulse,null,
+[extension.mp4]
+demuxer=mov

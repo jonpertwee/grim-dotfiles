@@ -1,0 +1,23 @@
+! Brogrammer Scheme
+! Stolen from: https://github.com/DonutDeflector/dotfiles/blob/master/home/.Xresources
+#define base00 #D6DAE4
+#define base01 #F71118
+#define base02 #2CC55D
+#define base03 #ECB90F
+#define base04 #2A84D2
+#define base05 #4E59B7
+#define base06 #0F80D5
+#define base07 #1F1F1F
+#define base08 #D6DAE4
+#define base09 #DE342E
+#define base0A #1DD260
+#define base0B #F2BD09
+#define base0C #0F80D5
+#define base0D #524FB9
+#define base0E #0F7CDA
+#define base0F #FFFFFF
+#define fore   #D6DAE4
+#define back   #000000
+#define curs   #D6DAE4
+
+

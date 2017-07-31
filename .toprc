@@ -1,0 +1,16 @@
+top's Config File (Linux processes with windows)
+Id:i, Mode_altscr=0, Mode_irixps=1, Delay_time=5.0, Curwin=1
+Def	fieldscur=¥¨34;=@D·º¹Å&')*+,-./012568<>?ABCFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghij
+	winflags=265524, sortindx=18, maxtasks=0, graph_cpus=1, graph_mems=2
+	summclr=6, msgsclr=2, headclr=2, taskclr=6
+Job	fieldscur=¨¥9·ºÅ&34D;<=')*+,-./012568>?@ABCFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghij
+	winflags=429364, sortindx=18, maxtasks=35, graph_cpus=2, graph_mems=0
+	summclr=1, msgsclr=6, headclr=1, taskclr=1
+Mem	fieldscur=¥º»¼½¾¿ÀÁÃÄ³´·Å&'()*+,-./0125689BFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghij
+	winflags=195892, sortindx=21, maxtasks=0, graph_cpus=2, graph_mems=0
+	summclr=5, msgsclr=5, headclr=4, taskclr=5
+Usr	fieldscur=¥¦§¨ª°¹·ºÄÅ)+,-./1234568;<=>?@ABCFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghij
+	winflags=195892, sortindx=3, maxtasks=0, graph_cpus=2, graph_mems=0
+	summclr=3, msgsclr=3, headclr=2, taskclr=3
+Fixed_widest=0, Summ_mscale=3, Task_mscale=3, Zero_suppress=0
+

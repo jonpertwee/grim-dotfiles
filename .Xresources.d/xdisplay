@@ -1,0 +1,12 @@
+! Xcursor
+Xcursor*theme:			Adwaita
+Xcursor*size:			22
+
+! Font settings
+Xft.autohint:			1
+Xft.antialias:			1
+Xft.hinting:			1
+Xft.hintstyle:			hintslight
+Xft.rgba:				rgb
+Xft.dpi:				94
+Xft.lcdfilter: 			lcddefault

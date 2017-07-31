@@ -1,0 +1,23 @@
+! Wavefront Scheme
+! from http://pastebin.com/uDtYkJ6q
+#define base00 #3d3d3d
+#define base01 #6673bf
+#define base02 #3ea290
+#define base03 #b0ead9
+#define base04 #31658c
+#define base05 #596196
+#define base06 #8292b2
+#define base07 #c8cacc
+#define base08 #4d4d4d
+#define base09 #899aff
+#define base0A #52ad91
+#define base0B #98c9bb
+#define base0C #477ab3
+#define base0D #7882bf
+#define base0E #95a7cc
+#define base0F #edeff2
+#define fore #ffffff
+#define back #000000
+#define curs #ffffff
+
+

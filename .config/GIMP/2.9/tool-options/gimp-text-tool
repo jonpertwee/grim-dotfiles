@@ -1,0 +1,11 @@
+# GIMP gimp-text-tool options
+
+(foreground (color-rgb 0.070588 0.067266 0.067266))
+(palette "Color History")
+(font "Dr Sugiyama")
+(font-size 128.000000)
+(hint-style slight)
+(justify center)
+(box-mode fixed)
+
+# end of gimp-text-tool options

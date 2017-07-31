@@ -1,0 +1,36 @@
+#!/bin/bash
+# monitor brightness script
+
+percBright=$(xbacklight -get | awk '{ print int($1+0.5) }')
+
+#if [ $(echo "$percBright") -z ]
+#then
+#    exit
+#fi
+
+echo $percBright%
+echo
+echo
+
+minMax() {
+  if [[ $percBright -eq 0 ]]; then
+        xbacklight -set 100
+  elif [[ $percBright -eq 100 ]]; then
+        xbacklight -set 0
+  elif [[ $percBright -ge 50 ]]; then
+        xbacklight -set 100
+  elif [[ $percBright -lt 50 ]]; then
+        xbacklight -set 0
+  fi
+}
+
+case $BLOCK_BUTTON in
+    3) minMax
+        ;;
+    4) xbacklight -inc 10
+        ;;
+    5) xbacklight -dec 10
+        ;;
+    *)
+        ;;
+esac

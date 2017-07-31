@@ -1,0 +1,7 @@
+# GIMP gimp-mypaint-brush-tool options
+
+(mybrush "Standard")
+(brush-size 256.000000)
+(brush-spacing 0.150000)
+
+# end of gimp-mypaint-brush-tool options

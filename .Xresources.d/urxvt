@@ -1,0 +1,40 @@
+! urxvt. settings
+urxvt.depth:			32
+!urxvt.transparent:	  true
+urxvt.shading:			5
+urxvt.termName:			256
+! Enable Visual Bell
+urxvt.urgentOnBell:		true
+urxvt.visualBell:		false
+! Hide scrollbar
+urxvt.scrollBar:		false
+! scrollback buffer number in lines
+urxvt.saveLines: 		22000
+! Do not scroll on output
+urxvt.scrollTtyOutput:		false
+! Scroll in relation to buffer
+urxvt.scrollWithBuffer: 	false
+! Skip scroll with large output
+urxvt.skipScroll: 		true
+! Scroll on keypress
+urxvt.scrollTtyKeypress:	true
+! Set fonts
+urxvt.font:     xft:monaco for powerline:style=regular:pixelsize=12:antialias=true:hinting=true
+urxvt.boldfont: xft:monaco for powerline:style=regular:pixelsize=12:antialias=true:hinting=true
+!urxvt.fading:			20
+!urxvt.fadeColor:		#000
+! Set loginshell variable
+urxvt.loginShell:		false
+! Allow open links
+urxvt.perl-ext-common: 		default,matcher,clipboard,url-select,keyboard-select
+urxvt.iso14755: False
+urxvt.url-select.launcher: /opt/vivaldi-snapshot/vivaldi-snapshot
+urxvt.url-select.underline:	true
+urxvt.keysym.Shift-Control-C:	 perl:clipboard:copy
+urxvt.keysym.Shift-Control-V:	 perl:clipboard:paste
+urxvt.copyCommand:	xsel -sel primary -ib
+urxvt.pasteCommand:	xsel -sel primary -ob
+urxvt.matcher.button: 		1
+! Add padding to shell
+urxvt.internalBorder:0
+urxvt.externalBorder:7

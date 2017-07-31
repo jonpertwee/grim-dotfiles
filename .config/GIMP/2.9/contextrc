@@ -1,0 +1,15 @@
+# GIMP user context
+
+(tool "gimp-paintbrush-tool")
+(paint-info "gimp-paintbrush")
+(foreground (color-rgb 0.776471 0.480140 0.240554))
+(background (color-rgb 0.078431 0.078431 0.086275))
+(brush "Acrylic 3")
+(dynamics "Oil Brush")
+(mybrush "Standard")
+(pattern "Clipboard Image")
+(gradient "FG to BG (RGB)")
+(palette "Color History")
+(font "Dr Sugiyama")
+
+# end of user context

@@ -1,0 +1,22 @@
+! Base16 Ocean
+! Scheme: Chris Kempson (http://chriskempson.com)
+#define base00 #2b303b
+#define base01 #bf616a
+#define base02 #a3be8c
+#define base03 #ebcb8b
+#define base04 #8fa1b3
+#define base05 #b48ead
+#define base06 #96b5b4
+#define base07 #c0c5ce
+#define base08 #65737e
+#define base09 #bf616a
+#define base0A #a3be8c
+#define base0B #ebcb8b
+#define base0C #8fa1b3
+#define base0D #b48ead
+#define base0E #96b5b4
+#define base0F #eff1f5
+#define fore #eff1f5
+#define back #2b303b
+#define curs #eff1f5
+

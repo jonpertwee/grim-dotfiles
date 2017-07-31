@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/mikhail/.config/gtk-3.0'
+let g:netrw_dirhist_2='/home/mikhail/.bin'
+let g:netrw_dirhist_3='/home/mikhail/.config/mpd'
+let g:netrw_dirhist_4='/etc/systemd/system'
+let g:netrw_dirhist_5='/home/mikhail/.ncmpcpp'
+let g:netrw_dirhist_6='/home/mikhail/.config/ranger'

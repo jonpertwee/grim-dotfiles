@@ -1,0 +1,11 @@
+# GIMP gimp-vector-tool options
+
+(foreground (color-rgb 0.070588 0.066667 0.066667))
+(background (color-rgb 0.078431 0.078431 0.086275))
+(brush "Clipboard Image")
+(dynamics "Inking")
+(pattern "Clipboard Image")
+(gradient "FG to BG (RGB)")
+(palette "Color History")
+
+# end of gimp-vector-tool options

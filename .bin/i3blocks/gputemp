@@ -1,0 +1,20 @@
+#!/bin/sh
+# get gpu temperature from nvidia by default (option provided for ati cards)
+
+gpuTemp=`nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits`
+#gpuTemp=`aticonfig --odgt`
+
+echo $gpuTemp°C
+echo
+
+# color
+if [ $(echo "$gpuTemp >= 80" | bc) -eq 1 ]
+then
+    echo \#DC322f
+elif [ $(echo "$gpuTemp < 80" | bc) -eq 1 ] && [ $(echo "$gpuTemp >=70" | bc) -eq 1 ]
+then
+    echo \#F07D2B
+elif [ $(echo "$gpuTemp < 70" | bc) -eq 1 ]
+then
+    echo \#55FF33
+fi

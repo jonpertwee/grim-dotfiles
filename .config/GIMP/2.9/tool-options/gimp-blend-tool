@@ -1,0 +1,8 @@
+# GIMP gimp-blend-tool options
+
+(gradient "FG to BG (RGB)")
+(brush-size 256.000000)
+(brush-spacing 0.150000)
+(gradient-reverse yes)
+
+# end of gimp-blend-tool options

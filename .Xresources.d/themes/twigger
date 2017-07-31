@@ -1,0 +1,21 @@
+! Twigger
+! Scheme: Tristen Lundquist
+#define base00 #000000
+#define base01 #bf5050
+#define base02 #58c758
+#define base03 #f7a468
+#define base04 #6c75b8
+#define base05 #8765a8
+#define base06 #63a69c
+#define base07 #707880
+#define base08 #373b41
+#define base09 #cc2929
+#define base0A #1cbd3c
+#define base0B #f07d2b
+#define base0C #304ec2
+#define base0D #b149ba
+#define base0E #3fbfb5
+#define base0F #c5c8c6
+#define fore #c5c8c6
+#define back #000000
+#define curs #c5c8c6
